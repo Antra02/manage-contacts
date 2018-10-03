@@ -28,7 +28,7 @@ Use of bootstrap classes to ensure the format displays as intended
   
 
 
-Accessibility - Need to learn (only used "role" here)
+Accessibility
 Unit testing - Wrote few test cases
 Reusable components - Contacts, Button and Input
 
