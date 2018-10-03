@@ -77,11 +77,7 @@ class Contact extends Component {
             name: this.state.newName, 
             phone: this.state.newPhone
         };
-        if (this.state.idOfContactToUpdate > contacts.length) {
-            contacts.splice(contacts.length-1, 1, newName);
-        } else {
            contacts.splice(this.state.idOfContactToUpdate - 1, 1, newName);
-        } 
 
         this.setState({
             contacts: contacts,
@@ -144,7 +140,7 @@ class Contact extends Component {
                         {this.state.contacts.map((contact) => {
                             return (
                                 <li
-                                    key={contact.id}
+                                    key={contact.name + contact.phone}
                                     className='list-group-item'
                                 >
                                     {contact.id} &nbsp; Name: &nbsp; {contact.name} <br/>
