@@ -115,7 +115,7 @@ class Contact extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div className="viewContact" role="presentation">
                 <form onSubmit={this.handleSubmit}>
                     <Input
                         type="text"
