@@ -58,7 +58,7 @@ class Contact extends Component {
                 contacts: [
                     ...prevState.contacts,
                     {
-                        id: prevState.contacts.length + 1,
+                        id: prevState.contacts[prevState.contacts.length-1].id + 1,
                         name: this.state.newName, 
                         phone: this.state.newPhone
                     }
@@ -77,7 +77,8 @@ class Contact extends Component {
             name: this.state.newName, 
             phone: this.state.newPhone
         };
-           contacts.splice(this.state.idOfContactToUpdate - 1, 1, newName);
+        let index = contacts.findIndex((contact) => contact.id === newName.id);
+        contacts.splice(index, 1, newName)
 
         this.setState({
             contacts: contacts,
