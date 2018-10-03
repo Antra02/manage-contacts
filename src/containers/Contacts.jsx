@@ -78,7 +78,7 @@ class Contact extends Component {
             phone: this.state.newPhone
         };
         let index = contacts.findIndex((contact) => contact.id === newName.id);
-        contacts.splice(index, 1, newName)
+        contacts.splice(index, 1, newName);
 
         this.setState({
             contacts: contacts,
@@ -131,7 +131,7 @@ class Contact extends Component {
                     <Button
                         type="submit"
                         className='btn-lg btn-primary mb-2'
-                        label='Save'
+                        label='Save contact'
                     >
                     </Button>
                 </form>
@@ -144,9 +144,8 @@ class Contact extends Component {
                                     key={contact.name + contact.phone}
                                     className='list-group-item'
                                 >
-                                    {contact.id} &nbsp; Name: &nbsp; {contact.name} <br/>
-                                    
-                                    &nbsp; Phone: &nbsp; {contact.phone}
+                                    <p>Name: {contact.name}</p> <br/>
+                                    <p>Phone: {contact.phone}</p>
                                     <Button
                                         type="button"
                                         className='btn-sm btn-primary ml-3'
