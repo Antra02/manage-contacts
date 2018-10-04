@@ -53,11 +53,13 @@ class Contact extends Component {
 
     //invokes when creating a new contact
     createContact = () => {
-        if (this.state.newName && this.state.newPhone) {
-            this.setState((prevState) => ({
+        if (this.state.newName && this.state.newPhone && this.state.contacts.length!==0) {
+            this.setState((prevState) => (
+            {
                 contacts: [
                     ...prevState.contacts,
-                    {
+
+                    {   
                         id: prevState.contacts[prevState.contacts.length-1].id + 1,
                         name: this.state.newName, 
                         phone: this.state.newPhone
@@ -65,8 +67,24 @@ class Contact extends Component {
                 ],
                 newName: '',
                 newPhone: ''
-            }));
+            })
+            );
         }
+        else if (this.state.newName && this.state.newPhone && this.state.contacts.length===0 ) {
+        this.setState(() => (
+            {
+                contacts: [
+                    {                              
+                        id:  1,
+                        name: this.state.newName, 
+                        phone: this.state.newPhone
+                    }
+                ],
+                newName: '',
+                newPhone: ''
+            })
+            );
+        } 
     }
 
     //invokes when updating an existing contact
